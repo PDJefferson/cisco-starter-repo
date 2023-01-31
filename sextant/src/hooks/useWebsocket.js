@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { w3cwebsocket as W3cwebsocket } from "websocket";
 
 export default function useWebsocket(url) {
-  const [data, setData] = useState("");
+  const [date, setDate] = useState("");
+
   useEffect(() => {
     const client = new W3cwebsocket(url);
     client.onopen = (event) => {
@@ -11,11 +12,10 @@ export default function useWebsocket(url) {
 
     client.onmessage = (message) => {
       const date = JSON.parse(message.data);
-      setData(date);
+      setDate(date);
     };
-
     return () => client.close();
   }, [url]);
-
-  return data;
+  
+  return date;
 }

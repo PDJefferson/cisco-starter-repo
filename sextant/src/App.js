@@ -5,13 +5,14 @@ import useCollectIp from "./hooks/useCollectIp";
 import DisplayLatency from "./components/DisplayLatency";
 const API_DOMAIN = "ipify.org";
 
+
 function App() {
   const ipv6Address = useCollectIp(`https://api6.${API_DOMAIN}?format=json`);
   const ipv4Address = useCollectIp(`https://api.${API_DOMAIN}?format=json`);
   return (
     <div className="App">
       <header>
-        <Banner title={"Sextant"} />
+        <Banner title={"SEXTANT"} />
       </header>
       <main className="Main">
         <Exhibit heading="ipv4">
