@@ -2,13 +2,16 @@ import "./App.css";
 import Banner from "./components/Banner";
 import Exhibit from "./components/Exhibit";
 import useCollectIp from "./hooks/useCollectIp";
+import DisplayLatency from "./components/DisplayLatency";
+const API_DOMAIN = "ipify.org";
+
 function App() {
-  const ipv6Address = useCollectIp("ipv6");
-  const ipv4Address = useCollectIp("ipv4");
+  const ipv6Address = useCollectIp(`https://api6.${API_DOMAIN}?format=json`);
+  const ipv4Address = useCollectIp(`https://api.${API_DOMAIN}?format=json`);
   return (
     <div className="App">
       <header>
-        <Banner title={"Banner title"} />
+        <Banner title={"Sextant"} />
       </header>
       <main className="Main">
         <Exhibit heading="ipv4">
@@ -16,6 +19,9 @@ function App() {
         </Exhibit>
         <Exhibit heading="ipv6">
           <p>{ipv6Address}</p>
+        </Exhibit>
+        <Exhibit heading="Latency">
+          <DisplayLatency />
         </Exhibit>
       </main>
     </div>
