@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    background-color: #FBEEC1;
+    justify-content: space-around;
+    flex-direction: column;
+    width: fit-content;
+    padding: 1% 5% 5% 5%;
+    margin: 1%;
+    border-radius: 25px;
+    border-style: solid;
+}
+
+.heading {
+    color: rgb(10, 61, 70);
+    align-items: flex-start;
+    margin-bottom: 5%;
+}
+
+.body {
+    
+    align-self: center;
+    align-items: center;
+    align-content: center;
+}
